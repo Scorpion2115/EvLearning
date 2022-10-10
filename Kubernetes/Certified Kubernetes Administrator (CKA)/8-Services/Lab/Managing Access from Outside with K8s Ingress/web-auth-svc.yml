@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-auth-svc
+spec:
+  type: ClusterIP
+  selector:
+    # determine to which pod the service is gonna route traffic
+    app: web-auth
+  ports:
+    # give a name to the port, which will be referred later by the ingress
+    - name: you-know-who
+      protocol: TCP
+      # the port that the service is listening
+      port: 80
+      # the port that the service is routing to the backend pod
+      targetPort: 80
