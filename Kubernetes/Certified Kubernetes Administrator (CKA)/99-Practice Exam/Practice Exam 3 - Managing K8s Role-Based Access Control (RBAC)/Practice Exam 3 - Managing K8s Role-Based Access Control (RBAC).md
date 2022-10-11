@@ -1,6 +1,11 @@
 # Practice Exam 3 - Managing K8s Role-Based Access Control (RBAC)
 ![img](../img/p3.jpg)
 
+## Objective
+* Create a Service Account
+* Create a ClusterRole That Provides Read Access to Pods
+* Bind the ClusterRole to the Service Account to Only Read Pods in the web Namespace
+
 ## Create a Service Account
 ```bash
 kubectl create sa  webautomation -n web
@@ -45,3 +50,7 @@ roleRef:
   name: pod-reader
   apiGroup: rbac.authorization.k8s.io
 ```
+
+## Reference
+* [Using RBAC Authorization:RoleBinding and ClusterRoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-binding-examples)
+* [Using RBAC Authorization:RoleBinding examples](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#role-binding-examples)

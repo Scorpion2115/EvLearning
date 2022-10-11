@@ -1,5 +1,11 @@
 # Practice Exam 2 - Deployment and Service
 ![img](../img/p2.jpg)
+## Objective
+* Edit the web-frontend deployment to expose the HTTP port
+* Create a service to expose the web-fronted pod
+* Scale the web-fronted deployment up
+* Create an ingress that map to new services
+
 ## Edit the Web Frontend Deployment to Expose the HTTP Port
 1. Edit the web-frontend deployment in the web namespace:
 ```bash
@@ -21,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-fronted-svc
+  name: web-frontend-svc
   namespace: web
 spec:
   type: NodePort
@@ -35,7 +41,7 @@ spec:
       targetPort: 80
       # Optional field
       # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
-      nodePort: 30007
+      nodePort: 30080
 ```
 
 ## Scale Up the Web Frontend Deployment

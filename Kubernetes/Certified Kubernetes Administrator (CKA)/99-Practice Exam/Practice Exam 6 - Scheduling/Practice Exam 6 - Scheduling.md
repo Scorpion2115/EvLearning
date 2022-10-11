@@ -1,4 +1,8 @@
 # Practice Exam 6 - Scheduling
+![img](../img/p6.jpg)
+## Objective
+* Drain the Worker1 Node
+* Create a Pod That Will Only Be Scheduled on Nodes with a Specific Label
 
 ## Drain the Worker1 Node
 ```bash

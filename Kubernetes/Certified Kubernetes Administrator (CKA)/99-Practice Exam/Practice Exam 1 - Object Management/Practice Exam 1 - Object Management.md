@@ -1,5 +1,9 @@
 # Practice Exam 1 - Object Management
-You can run `./verify.sh` to check the status of your work
+![img](../img/p1.jpg)
+## Objectives
+1. Count the number of nodes that are ready to run normal workloads
+2. Retrieve error messages from a container log
+3. Find the Pod utilizing the most CPU within a namespace
 
 
 ## Count the Number of Nodes That Are Ready to Run Normal Workloads

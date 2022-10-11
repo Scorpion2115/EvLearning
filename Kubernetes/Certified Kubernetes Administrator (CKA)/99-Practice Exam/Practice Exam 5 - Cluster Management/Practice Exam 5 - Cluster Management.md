@@ -1,14 +1,27 @@
 # Practice Exam 5 - Cluster Management
+![img](../img/p5.jpg)
+## Objective
+* Upgrade All Kubernetes Components on the Control Plane Node
+* Upgrade All Kubernetes Components on the Worker Node
 
 ## Upgrade All Kubernetes Components on the Control Plane Node
+0. Preparation
+```bash
+sudo apt update
+sudo apt-cache madison kubeadm
+# find the latest 1.23 version in the list
+# it should look like 1.23.x-00, where x is the latest patch
+```
+
 1. Upgrade kubeadm:
 ```bash
 sudo apt-mark unhold kubeadm
-sudo apt-get update
-sudo apt-get install -y --allow-change-held-packages kubeadm=1.22.2-00
+sudo apt update
+sudo apt-get install -y kubeadm=1.22.2-00
 sudo apt-mark hold kubeadm
 sudo kubeadm version
 ```
+
 2. Verify the upgrade plan
 ```bash
 sudo kubeadm upgrade plan
