@@ -1,10 +1,10 @@
-# Building a Kubernetes 1.24 Cluster with Kubeadm
+# Building a Kubernetes Cluster with Kubeadm
 
 ## Install Packages
 
 1. Log into the Control Plane Node (Note: The following steps must be performed on all three nodes.).
 
-2. Create configuration file for containerd, to enable the `overlay` and `br_netfilter` modules
+2. Create configuration file for containerd:
 ```bash
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
 overlay
@@ -91,11 +91,7 @@ sudo apt-get update
 
 17. Install Kubernetes packages (Note: If you get a dpkg lock message, just wait a minute or two before trying the command again):
 ```bash
-# Specify the version
-sudo apt-get install -y kubelet=1.24.0-00 kubeadm=1.24.0-00 kubectl=1.24.0-00
-
-# install the latest available version
-sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-get install -y kubelet=1.22.0-00 kubeadm=1.22.0-00 kubectl=1.22.0-00
 ```
 
 18. Turn off automatic updates:
@@ -107,9 +103,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ## Initialize the Cluster
 1. Initialize the Kubernetes cluster on the control plane node using kubeadm (Note: This is only performed on the Control Plane Node):
 ```bash
-sudo kubeadm init --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.24.0
-
-sudo kubeadm init --pod-network-cidr 192.168.0.0/16
+sudo kubeadm init --pod-network-cidr 192.168.0.0/16 --kubernetes-version 1.22.0
 ```
 
 2. Set kubectl access:
