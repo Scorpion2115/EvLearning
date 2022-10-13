@@ -66,6 +66,37 @@ resources: ["nodes", "pods", "configmaps", "deployments"]
 * Group
 * User
 
+## Storage
+The sequence of deploy a pod using local disk as persistent volume
+1. Create a `StorageClass`:
+```yml
+...
+metadata:
+  name: <the-name-of-sc>
+provisioner: kubernetes.io/no-provisioner
+allowVolumeExpansion: true
+...
+``` 
+2. Create a `PV`
+```yml
+...
+metadata:
+  name: <my-pv>
+spec:
+  storageClassName: <the-name-of-sc>
+...
+```
+3. Create a `PVC`
+```yml
+...
+metadata:
+  name: <my-pvc>
+  namespace: <my-ns>
+spec:
+  storageClassName: <the-name-of-sc>
+...
+```
+
 ## kubectl
 ```bash
 kubectl top pod -n web --sort-by cpu --selector app=auth  # Show metrics for a given pod with specific label and sort it by 'cpu' or 'memory'

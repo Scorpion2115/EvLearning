@@ -25,5 +25,6 @@ provider "aws" {
   region = data.terraform_remote_state.eks.outputs.region
 }
 
-data "aws_eks_cluster" "cluster" {
-                                                                                                                                                                                  1,1           Top
+data "aws_eks_cluster" "cluster" {  
+  ??
+}                                                                                                                                                                                                                                                                                       

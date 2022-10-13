@@ -1,5 +1,10 @@
 # Practice Exam 7 - Storage
 ![img](../img/p7.jpg)
+## Objective
+* Create a PersistentVolume
+* Create a Pod that uses the PersistentVolume for Storage
+* Expand the Pod's PersistentVolume
+
 ## Create a PersistentVolume
 1. Create a StorageClass using local disk. Set field `allowVolumeExpansion` to true.
 ```yml
