@@ -1,5 +1,9 @@
 # Practice Exam 9 - Multi-container Pods
 ![img](../img/p9.jpg)
+## Objective
+1. Create a Multi-Container Pod
+2. Create a Pod Which Uses a Sidecar to Expose the Main Container's Log File to `stdout`
+
 ## Create a Multi-Container Pod
 ```yml
 # sudo vi multi.yml

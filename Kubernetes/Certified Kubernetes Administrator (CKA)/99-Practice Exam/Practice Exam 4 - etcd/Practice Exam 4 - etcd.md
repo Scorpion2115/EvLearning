@@ -11,9 +11,9 @@ ssh etcd1
 ```
 
 ```bash
-# sudo ETCDCTL_API=3 etcdctl --endpoints=https://<etcd ip address>:2379 --cacert=<trusted-ca-file> --cert=<cert-file> --key=<key-file> snapshot save <backup-file-location>
+#ETCDCTL_API=3 etcdctl --endpoints=https://<etcd ip address>:2379 --cacert=<trusted-ca-file> --cert=<cert-file> --key=<key-file> snapshot save <backup-file-location>
 
-sudo ETCDCTL_API=3 etcdctl --endpoints=https://10.0.1.102:2379 --cacert=/home/cloud_user/etcd-certs/etcd-ca.pem  --cert=/home/cloud_user/etcd-certs/etcd-server.crt --key=/home/cloud_user/etcd-certs/etcd-server.key snapshot save /home/cloud_user/etcd_backup.db
+ETCDCTL_API=3 etcdctl --endpoints=https://10.0.1.102:2379 --cacert=/home/cloud_user/etcd-certs/etcd-ca.pem  --cert=/home/cloud_user/etcd-certs/etcd-server.crt --key=/home/cloud_user/etcd-certs/etcd-server.key snapshot save /home/cloud_user/etcd_backup.db
 ```
 
 ## Restore the etcd Data from the Backup
