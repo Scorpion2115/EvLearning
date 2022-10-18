@@ -102,6 +102,8 @@ spec:
 kubectl top pod -n web --sort-by cpu --selector app=auth  # Show metrics for a given pod with specific label and sort it by 'cpu' or 'memory'
 
 kubectl get nodes --show-labels                                  # Show labels
+kubectl get pods -l key1=value1,key2=value2                      # Search pod based on its labels
+
 kubectl label nodes <node-name> key=value                      # Add a Label
 ```
 
