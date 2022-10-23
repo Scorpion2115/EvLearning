@@ -10,3 +10,7 @@ Once the app or client gains access to the website or service through API gatewa
 A REST API receives messages from the client and forwards those to the backend resource. 
 
 A WebSocket API supports `2-way communication`. The backend services can independently send messages to their clients. It means the WebSocket API does support a realtime communication.
+
+## API Gateway with Lambda
+API Gateway can reference both Lambda Versioning and Alias
+![img](../img/api-gw-lambda.jpg)
