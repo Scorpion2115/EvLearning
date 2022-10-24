@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: 2010-09-09
+# add the parameter session to allow a drop down list
+Parameters:
+  Tenancy:
+    Description: Set up VPC Tenancy
+    Type: String
+    Default: default
+    # we will see this in the drop down
+    AllowedValues:
+      - default
+      - dedicated
+
+# setup the condition
+Conditions:
+  VPCTenancy: !Equals 
+    - !Ref Tenancy
+    - dedicated
+
+    
+Resources:
+  myVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: 'false'
+      EnableDnsHostnames: 'false'
+      #InstanceTenancy: dedicated
+      # whatever we select in the parameters, will be referred here to create vpc
+      InstanceTenancy: !If 
+        - VPCTenancy
+        - dedicated
+        - default
+
+      Tags:
+        - Key: foo
+          Value: bar
