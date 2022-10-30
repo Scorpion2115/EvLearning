@@ -18,7 +18,3 @@ Access the UI via `<host-ip>:8080`
 - Input the tasks name, as per `build.gradle` in the source code
 3. Post-build Actions - Archive the artifacts
 ![img](./img/build-steps.jpg)
-
-
-
-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
