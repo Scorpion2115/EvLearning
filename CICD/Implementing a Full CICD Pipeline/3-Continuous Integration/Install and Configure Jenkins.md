@@ -12,6 +12,10 @@ sudo apt-get install jenkins
 Access the UI via `<host-ip>:8080`
 
 ## Configure Jenkins
+1. Generate a Personal access tokens from Github via `Settings -> Developer settings`
+
+
+
 1. Create a new FreeStyle project in Jenkins, and paste the url of source code project to `Source Code Management`
 2. Build Steps - Invoke Gradle script
 - Check Use `Gradle Wrapper`

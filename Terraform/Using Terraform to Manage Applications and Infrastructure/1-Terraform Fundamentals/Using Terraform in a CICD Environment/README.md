@@ -40,6 +40,4 @@ git checkout -b 'update-tfc-backend'
 3. Add, commit, and push your changes
 4. Review and merge the pull request
 
-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
-
 ### Verifying a provisioning Instance
