@@ -1,9 +1,9 @@
 # How to Install Gradle on Ubuntu 22.04
 1. Install Java on Ubuntu
 ```bash
-sudo apt install default-jdk -y
+sudo apt install openjdk-8-jdk -y
 
-java --version
+java -version
 ```
 2. Download Gradle package
 ```bash
