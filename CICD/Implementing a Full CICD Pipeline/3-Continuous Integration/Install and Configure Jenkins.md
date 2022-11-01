@@ -27,11 +27,18 @@ sudo ufw status
 1. Add the access token to Jenkins via In Manage-Jenkins -> Configure System
 ![img](./img/token.jpg)
 1. Create a new FreeStyle project in Jenkins, and paste the url of source code project to `Source Code Management`
-2. Build Steps - Invoke Gradle script
+2. Build Triggers - GitHub hook trigger for GITScm polling
+3. Build Steps - Invoke Gradle script
 - Check Use `Gradle Wrapper`
 - Input the tasks name, as per `build.gradle` in the source code
-3. Post-build Actions - Archive the artifacts
+4. Post-build Actions - Archive the artifacts
 ![img](./img/build-steps.jpg)
+
+## Issue Fix
+- Issue: [Gradle: Could not determine java version from '11.0.6'](https://stackoverflow.com/questions/54358107/gradle-could-not-determine-java-version-from-11-0-2). You need update gradle wrap version and push it to repo
+![img](./img/issue-fix-graddle-wrapper.jpg)
+
+- Issue: [Could not find method layout() on upgrading to gradle 7.2](https://discuss.gradle.org/t/could-not-find-method-layout-on-upgrading-to-gradle-7-2/41194). If you need to run Node tasks in your Gradle build, migrate to a plugin that is still maintained, like the com.github.node-gradle.node 12 Gradle Node plugin.
 
 ## Reference
 - [How to Install Jenkins on Ubuntu 22.04](https://phoenixnap.com/kb/install-jenkins-ubuntu)
