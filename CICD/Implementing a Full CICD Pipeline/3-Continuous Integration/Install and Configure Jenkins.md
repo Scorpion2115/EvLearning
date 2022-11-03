@@ -1,4 +1,9 @@
 # Install and Configure Jenkins
+## Install java
+```bash
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+```
 ## Install Jenkins
 1. Start by importing the GPG key. The GPG key verifies package integrity but there is no output. Run:
 ```bash
