@@ -1,0 +1,31 @@
+eks:
+  type: eks
+  {{! use existing instance }}
+  persistent: true
+  depends_on: []
+  descriptor:
+    Resources:
+      Cluster:
+        Properties:
+          EnableOidcProvider: true
+          {{! refer to context.yaml -> defaults_nonprod ->  eks }}
+          Version: "{{eks.eks_version}}"
+      SecurityGroup:
+        Type:  "Pipeline::SecurityGroup"
+        Properties:
+          IngressRules:
+            - { "sources": ["worker","sidecart","jumpbox"], "ports": ["TCP:443"]}
+      SystemMasterRole:
+        Type: "Custom::RoleMapping"
+        Properties:
+          Role: "masterrole"
+          Groups:
+            - system:masters
+      WorkerRole:
+        Type: "Custom::RoleMapping"
+        Properties:
+          Role: "workerrole"
+          Username: {{=<% %>=}}"system:node:{{EC2PrivateDNSName}}"<%={{ }}=%> 
+          Groups:
+            - system:bootstrappers
+            - system:nodes
