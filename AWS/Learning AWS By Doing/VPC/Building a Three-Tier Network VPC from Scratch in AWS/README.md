@@ -2,12 +2,12 @@
 ## Introduction
 This lab provides you with the opportunity to get hands-on experience building and connecting the following components inside AWS:
 
-VPC
-Subnets
-Internet Gateway
-Route Tables
-Nat Gateway
-Network Access Control Lists (NACLs)
+- VPC
+- Subnets
+- Internet Gateway
+- Route Tables
+- Nat Gateway
+- Network Access Control Lists (NACLs)
 These components are the foundation of highly available/fault tolerant networking architecture inside of AWS, while covering concepts such as infrastrucutre, design, routing, and security.
 ![img](./img/lab-diagram.jpg)
 
