@@ -395,7 +395,7 @@ Mappings:
       HVM64: ami-0f7937761741dc640
       HVMG2: NOT_SUPPORTED
 Resources:
-  # the resource is a web server
+  # Every resource that you need in the stack will be declared in your template
   WebServerInstance:
     Type: 'AWS::EC2::Instance'
     Metadata:
